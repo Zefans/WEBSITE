@@ -43,4 +43,3 @@ Node.js untuk build cloud dipatok lewat `.nvmrc` agar sesuai dengan versi Vite y
 ## Batas data aplikasi saat ini
 
 Data pengukuran contoh disajikan sebagai file statis. Hasil uji kecepatan, pilihan persetujuan, riwayat training, dan registri model disimpan di `localStorage` browser. Karena belum ada backend atau database bersama, data yang dibuat pengguna tidak tersinkron ke perangkat atau pengguna lain. Gunakan versi ini sebagai demo; untuk pengumpulan data bersama diperlukan backend dan penyimpanan server.
-
