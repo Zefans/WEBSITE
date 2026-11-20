@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"name": "ui-ux-pro-max-skill",
+			"path": "../../../ui-ux-pro-max-skill"
+		},
+		{
+			"name": "antigravity-awesome-skills",
+			"path": "../../../antigravity-awesome-skills"
+		},
+		{
+			"name": "skillx",
+			"path": "../../../skillx"
+		},
+		{
+			"name": "claude-seo",
+			"path": "../../../claude-seo"
+		}
+	],
+	"settings": {}
+}

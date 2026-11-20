@@ -1,0 +1,636 @@
+{
+  "generated_at": "2026-11-19T01:18:22.988Z",
+  "count": 63,
+  "files": [
+    {
+      "filename": "IM3_BTS_10m.txt",
+      "path": "/dummy/IM3_BTS_10m.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": null,
+      "ruang": null,
+      "measurement": 1,
+      "is_bts": true,
+      "size_bytes": 111078
+    },
+    {
+      "filename": "IM3_Lt1_Ruang1_K1.txt",
+      "path": "/dummy/IM3_Lt1_Ruang1_K1.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 1,
+      "ruang": 1,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 112972
+    },
+    {
+      "filename": "IM3_Lt1_Ruang1_K2.txt",
+      "path": "/dummy/IM3_Lt1_Ruang1_K2.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 1,
+      "ruang": 1,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 113161
+    },
+    {
+      "filename": "IM3_Lt1_Ruang2_K1.txt",
+      "path": "/dummy/IM3_Lt1_Ruang2_K1.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 1,
+      "ruang": 2,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 111313
+    },
+    {
+      "filename": "IM3_Lt1_Ruang2_K2.txt",
+      "path": "/dummy/IM3_Lt1_Ruang2_K2.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 1,
+      "ruang": 2,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 111616
+    },
+    {
+      "filename": "IM3_Lt1_Ruang3_K1.txt",
+      "path": "/dummy/IM3_Lt1_Ruang3_K1.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 1,
+      "ruang": 3,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 113268
+    },
+    {
+      "filename": "IM3_Lt1_Ruang3_K2.txt",
+      "path": "/dummy/IM3_Lt1_Ruang3_K2.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 1,
+      "ruang": 3,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 113006
+    },
+    {
+      "filename": "IM3_Lt1_Ruang4_K1.txt",
+      "path": "/dummy/IM3_Lt1_Ruang4_K1.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 1,
+      "ruang": 4,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 112821
+    },
+    {
+      "filename": "IM3_Lt1_Ruang4_K2.txt",
+      "path": "/dummy/IM3_Lt1_Ruang4_K2.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 1,
+      "ruang": 4,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 112105
+    },
+    {
+      "filename": "IM3_Lt2_Ruang1_K1.txt",
+      "path": "/dummy/IM3_Lt2_Ruang1_K1.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 2,
+      "ruang": 1,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 113507
+    },
+    {
+      "filename": "IM3_Lt2_Ruang1_K2.txt",
+      "path": "/dummy/IM3_Lt2_Ruang1_K2.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 2,
+      "ruang": 1,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 113721
+    },
+    {
+      "filename": "IM3_Lt2_Ruang2_K1.txt",
+      "path": "/dummy/IM3_Lt2_Ruang2_K1.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 2,
+      "ruang": 2,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 112665
+    },
+    {
+      "filename": "IM3_Lt2_Ruang2_K2.txt",
+      "path": "/dummy/IM3_Lt2_Ruang2_K2.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 2,
+      "ruang": 2,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 112433
+    },
+    {
+      "filename": "IM3_Lt2_Ruang3_K1.txt",
+      "path": "/dummy/IM3_Lt2_Ruang3_K1.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 2,
+      "ruang": 3,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 112273
+    },
+    {
+      "filename": "IM3_Lt2_Ruang3_K2.txt",
+      "path": "/dummy/IM3_Lt2_Ruang3_K2.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 2,
+      "ruang": 3,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 112110
+    },
+    {
+      "filename": "IM3_Lt2_Ruang4_K1.txt",
+      "path": "/dummy/IM3_Lt2_Ruang4_K1.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 2,
+      "ruang": 4,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 111817
+    },
+    {
+      "filename": "IM3_Lt2_Ruang4_K2.txt",
+      "path": "/dummy/IM3_Lt2_Ruang4_K2.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 2,
+      "ruang": 4,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 111910
+    },
+    {
+      "filename": "IM3_Lt2_Ruang5_K1.txt",
+      "path": "/dummy/IM3_Lt2_Ruang5_K1.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 2,
+      "ruang": 5,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 113276
+    },
+    {
+      "filename": "IM3_Lt2_Ruang5_K2.txt",
+      "path": "/dummy/IM3_Lt2_Ruang5_K2.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 2,
+      "ruang": 5,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 112742
+    },
+    {
+      "filename": "IM3_Lt2_Ruang6_K1.txt",
+      "path": "/dummy/IM3_Lt2_Ruang6_K1.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 2,
+      "ruang": 6,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 111431
+    },
+    {
+      "filename": "IM3_Lt2_Ruang6_K2.txt",
+      "path": "/dummy/IM3_Lt2_Ruang6_K2.txt",
+      "provider": "Indosat Ooredoo",
+      "floor": 2,
+      "ruang": 6,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 111830
+    },
+    {
+      "filename": "Smartfren_BTS_10m.txt",
+      "path": "/dummy/Smartfren_BTS_10m.txt",
+      "provider": "Smartfren",
+      "floor": null,
+      "ruang": null,
+      "measurement": 1,
+      "is_bts": true,
+      "size_bytes": 102078
+    },
+    {
+      "filename": "Smartfren_Lt1_Ruang1_K1.txt",
+      "path": "/dummy/Smartfren_Lt1_Ruang1_K1.txt",
+      "provider": "Smartfren",
+      "floor": 1,
+      "ruang": 1,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 103227
+    },
+    {
+      "filename": "Smartfren_Lt1_Ruang1_K2.txt",
+      "path": "/dummy/Smartfren_Lt1_Ruang1_K2.txt",
+      "provider": "Smartfren",
+      "floor": 1,
+      "ruang": 1,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 103017
+    },
+    {
+      "filename": "Smartfren_Lt1_Ruang2_K1.txt",
+      "path": "/dummy/Smartfren_Lt1_Ruang2_K1.txt",
+      "provider": "Smartfren",
+      "floor": 1,
+      "ruang": 2,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102108
+    },
+    {
+      "filename": "Smartfren_Lt1_Ruang2_K2.txt",
+      "path": "/dummy/Smartfren_Lt1_Ruang2_K2.txt",
+      "provider": "Smartfren",
+      "floor": 1,
+      "ruang": 2,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102244
+    },
+    {
+      "filename": "Smartfren_Lt1_Ruang3_K1.txt",
+      "path": "/dummy/Smartfren_Lt1_Ruang3_K1.txt",
+      "provider": "Smartfren",
+      "floor": 1,
+      "ruang": 3,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 103398
+    },
+    {
+      "filename": "Smartfren_Lt1_Ruang3_K2.txt",
+      "path": "/dummy/Smartfren_Lt1_Ruang3_K2.txt",
+      "provider": "Smartfren",
+      "floor": 1,
+      "ruang": 3,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 103051
+    },
+    {
+      "filename": "Smartfren_Lt1_Ruang4_K1.txt",
+      "path": "/dummy/Smartfren_Lt1_Ruang4_K1.txt",
+      "provider": "Smartfren",
+      "floor": 1,
+      "ruang": 4,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102792
+    },
+    {
+      "filename": "Smartfren_Lt1_Ruang4_K2.txt",
+      "path": "/dummy/Smartfren_Lt1_Ruang4_K2.txt",
+      "provider": "Smartfren",
+      "floor": 1,
+      "ruang": 4,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102401
+    },
+    {
+      "filename": "Smartfren_Lt2_Ruang1_K1.txt",
+      "path": "/dummy/Smartfren_Lt2_Ruang1_K1.txt",
+      "provider": "Smartfren",
+      "floor": 2,
+      "ruang": 1,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 103582
+    },
+    {
+      "filename": "Smartfren_Lt2_Ruang1_K2.txt",
+      "path": "/dummy/Smartfren_Lt2_Ruang1_K2.txt",
+      "provider": "Smartfren",
+      "floor": 2,
+      "ruang": 1,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 103915
+    },
+    {
+      "filename": "Smartfren_Lt2_Ruang2_K1.txt",
+      "path": "/dummy/Smartfren_Lt2_Ruang2_K1.txt",
+      "provider": "Smartfren",
+      "floor": 2,
+      "ruang": 2,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102726
+    },
+    {
+      "filename": "Smartfren_Lt2_Ruang2_K2.txt",
+      "path": "/dummy/Smartfren_Lt2_Ruang2_K2.txt",
+      "provider": "Smartfren",
+      "floor": 2,
+      "ruang": 2,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102550
+    },
+    {
+      "filename": "Smartfren_Lt2_Ruang3_K1.txt",
+      "path": "/dummy/Smartfren_Lt2_Ruang3_K1.txt",
+      "provider": "Smartfren",
+      "floor": 2,
+      "ruang": 3,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102441
+    },
+    {
+      "filename": "Smartfren_Lt2_Ruang3_K2.txt",
+      "path": "/dummy/Smartfren_Lt2_Ruang3_K2.txt",
+      "provider": "Smartfren",
+      "floor": 2,
+      "ruang": 3,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102309
+    },
+    {
+      "filename": "Smartfren_Lt2_Ruang4_K1.txt",
+      "path": "/dummy/Smartfren_Lt2_Ruang4_K1.txt",
+      "provider": "Smartfren",
+      "floor": 2,
+      "ruang": 4,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102197
+    },
+    {
+      "filename": "Smartfren_Lt2_Ruang4_K2.txt",
+      "path": "/dummy/Smartfren_Lt2_Ruang4_K2.txt",
+      "provider": "Smartfren",
+      "floor": 2,
+      "ruang": 4,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102235
+    },
+    {
+      "filename": "Smartfren_Lt2_Ruang5_K1.txt",
+      "path": "/dummy/Smartfren_Lt2_Ruang5_K1.txt",
+      "provider": "Smartfren",
+      "floor": 2,
+      "ruang": 5,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102988
+    },
+    {
+      "filename": "Smartfren_Lt2_Ruang5_K2.txt",
+      "path": "/dummy/Smartfren_Lt2_Ruang5_K2.txt",
+      "provider": "Smartfren",
+      "floor": 2,
+      "ruang": 5,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102672
+    },
+    {
+      "filename": "Smartfren_Lt2_Ruang6_K1.txt",
+      "path": "/dummy/Smartfren_Lt2_Ruang6_K1.txt",
+      "provider": "Smartfren",
+      "floor": 2,
+      "ruang": 6,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102140
+    },
+    {
+      "filename": "Smartfren_Lt2_Ruang6_K2.txt",
+      "path": "/dummy/Smartfren_Lt2_Ruang6_K2.txt",
+      "provider": "Smartfren",
+      "floor": 2,
+      "ruang": 6,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102324
+    },
+    {
+      "filename": "Telkomsel_BTS_10m.txt",
+      "path": "/dummy/Telkomsel_BTS_10m.txt",
+      "provider": "Telkomsel",
+      "floor": null,
+      "ruang": null,
+      "measurement": 1,
+      "is_bts": true,
+      "size_bytes": 102078
+    },
+    {
+      "filename": "Telkomsel_Lt1_Ruang1_K1.txt",
+      "path": "/dummy/Telkomsel_Lt1_Ruang1_K1.txt",
+      "provider": "Telkomsel",
+      "floor": 1,
+      "ruang": 1,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102386
+    },
+    {
+      "filename": "Telkomsel_Lt1_Ruang1_K2.txt",
+      "path": "/dummy/Telkomsel_Lt1_Ruang1_K2.txt",
+      "provider": "Telkomsel",
+      "floor": 1,
+      "ruang": 1,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102399
+    },
+    {
+      "filename": "Telkomsel_Lt1_Ruang2_K1.txt",
+      "path": "/dummy/Telkomsel_Lt1_Ruang2_K1.txt",
+      "provider": "Telkomsel",
+      "floor": 1,
+      "ruang": 2,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102078
+    },
+    {
+      "filename": "Telkomsel_Lt1_Ruang2_K2.txt",
+      "path": "/dummy/Telkomsel_Lt1_Ruang2_K2.txt",
+      "provider": "Telkomsel",
+      "floor": 1,
+      "ruang": 2,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102088
+    },
+    {
+      "filename": "Telkomsel_Lt1_Ruang3_K1.txt",
+      "path": "/dummy/Telkomsel_Lt1_Ruang3_K1.txt",
+      "provider": "Telkomsel",
+      "floor": 1,
+      "ruang": 3,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102448
+    },
+    {
+      "filename": "Telkomsel_Lt1_Ruang3_K2.txt",
+      "path": "/dummy/Telkomsel_Lt1_Ruang3_K2.txt",
+      "provider": "Telkomsel",
+      "floor": 1,
+      "ruang": 3,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102382
+    },
+    {
+      "filename": "Telkomsel_Lt1_Ruang4_K1.txt",
+      "path": "/dummy/Telkomsel_Lt1_Ruang4_K1.txt",
+      "provider": "Telkomsel",
+      "floor": 1,
+      "ruang": 4,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102248
+    },
+    {
+      "filename": "Telkomsel_Lt1_Ruang4_K2.txt",
+      "path": "/dummy/Telkomsel_Lt1_Ruang4_K2.txt",
+      "provider": "Telkomsel",
+      "floor": 1,
+      "ruang": 4,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102107
+    },
+    {
+      "filename": "Telkomsel_Lt2_Ruang1_K1.txt",
+      "path": "/dummy/Telkomsel_Lt2_Ruang1_K1.txt",
+      "provider": "Telkomsel",
+      "floor": 2,
+      "ruang": 1,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102763
+    },
+    {
+      "filename": "Telkomsel_Lt2_Ruang1_K2.txt",
+      "path": "/dummy/Telkomsel_Lt2_Ruang1_K2.txt",
+      "provider": "Telkomsel",
+      "floor": 2,
+      "ruang": 1,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 103123
+    },
+    {
+      "filename": "Telkomsel_Lt2_Ruang2_K1.txt",
+      "path": "/dummy/Telkomsel_Lt2_Ruang2_K1.txt",
+      "provider": "Telkomsel",
+      "floor": 2,
+      "ruang": 2,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102202
+    },
+    {
+      "filename": "Telkomsel_Lt2_Ruang2_K2.txt",
+      "path": "/dummy/Telkomsel_Lt2_Ruang2_K2.txt",
+      "provider": "Telkomsel",
+      "floor": 2,
+      "ruang": 2,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102181
+    },
+    {
+      "filename": "Telkomsel_Lt2_Ruang3_K1.txt",
+      "path": "/dummy/Telkomsel_Lt2_Ruang3_K1.txt",
+      "provider": "Telkomsel",
+      "floor": 2,
+      "ruang": 3,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102110
+    },
+    {
+      "filename": "Telkomsel_Lt2_Ruang3_K2.txt",
+      "path": "/dummy/Telkomsel_Lt2_Ruang3_K2.txt",
+      "provider": "Telkomsel",
+      "floor": 2,
+      "ruang": 3,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102163
+    },
+    {
+      "filename": "Telkomsel_Lt2_Ruang4_K1.txt",
+      "path": "/dummy/Telkomsel_Lt2_Ruang4_K1.txt",
+      "provider": "Telkomsel",
+      "floor": 2,
+      "ruang": 4,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102087
+    },
+    {
+      "filename": "Telkomsel_Lt2_Ruang4_K2.txt",
+      "path": "/dummy/Telkomsel_Lt2_Ruang4_K2.txt",
+      "provider": "Telkomsel",
+      "floor": 2,
+      "ruang": 4,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102094
+    },
+    {
+      "filename": "Telkomsel_Lt2_Ruang5_K1.txt",
+      "path": "/dummy/Telkomsel_Lt2_Ruang5_K1.txt",
+      "provider": "Telkomsel",
+      "floor": 2,
+      "ruang": 5,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102345
+    },
+    {
+      "filename": "Telkomsel_Lt2_Ruang5_K2.txt",
+      "path": "/dummy/Telkomsel_Lt2_Ruang5_K2.txt",
+      "provider": "Telkomsel",
+      "floor": 2,
+      "ruang": 5,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102152
+    },
+    {
+      "filename": "Telkomsel_Lt2_Ruang6_K1.txt",
+      "path": "/dummy/Telkomsel_Lt2_Ruang6_K1.txt",
+      "provider": "Telkomsel",
+      "floor": 2,
+      "ruang": 6,
+      "measurement": 1,
+      "is_bts": false,
+      "size_bytes": 102088
+    },
+    {
+      "filename": "Telkomsel_Lt2_Ruang6_K2.txt",
+      "path": "/dummy/Telkomsel_Lt2_Ruang6_K2.txt",
+      "provider": "Telkomsel",
+      "floor": 2,
+      "ruang": 6,
+      "measurement": 2,
+      "is_bts": false,
+      "size_bytes": 102086
+    }
+  ]
+}
