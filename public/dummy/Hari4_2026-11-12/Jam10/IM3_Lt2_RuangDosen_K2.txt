@@ -1499,3 +1499,4 @@ Timestamp	Longitude	Latitude	Operatorname	NetworkTech	Level	LTERSSI	Filemark
 2026.11.16_11.44.59	123.66795	-10.15394	Indosat_Ooredoo	4G	-107	-102	DUMMY
 2026.11.16_11.44.59	123.66795	-10.15394	Indosat_Ooredoo	4G	-106	-102	DUMMY
 2026.11.16_11.44.59	123.66795	-10.15394	Indosat_Ooredoo	4G	-107	-101	DUMMY
+

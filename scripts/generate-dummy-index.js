@@ -14,19 +14,13 @@
 // Setiap kali menambah file/folder baru, jalankan script ini lagi.
 // ============================================================================
 
-<<<<<<< HEAD
 import { readdirSync, readFileSync, writeFileSync, statSync } from 'fs';
 import { join, resolve, dirname, relative } from 'path';
-=======
-import { readdirSync, writeFileSync, statSync } from 'fs';
-import { join, resolve, dirname, relative, posix } from 'path';
->>>>>>> a75878d3452a1206f5e86765f81f8da857ddb2cb
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DUMMY_DIR = resolve(__dirname, '../public/dummy');
 const OUTPUT    = resolve(__dirname, '../public/dummy/index.json');
-<<<<<<< HEAD
 const POINTS_CSV = resolve(DUMMY_DIR, 'daftar_titik_DUMMY.csv');
 
 const POINT_CHECKPOINT_MAP = {
@@ -86,8 +80,6 @@ function parsePointCsv(csvText) {
 }
 
 const pointCoordinates = parsePointCsv(readFileSync(POINTS_CSV, 'utf8'));
-=======
->>>>>>> a75878d3452a1206f5e86765f81f8da857ddb2cb
 
 // ---------------------------------------------------------------------------
 // Scan rekursif: kumpulkan semua .txt dari DUMMY_DIR dan semua subfoldernya
@@ -100,11 +92,7 @@ function scanDir(dir, baseDir) {
     const fullPath = join(dir, entry.name);
 
     if (entry.isDirectory()) {
-<<<<<<< HEAD
       // Folder data bisa berlapis, misalnya Hari/Jam.
-=======
-      // Masuk ke subfolder (rekursif, 1 level saja — tidak masuk nested lebih dalam)
->>>>>>> a75878d3452a1206f5e86765f81f8da857ddb2cb
       const sub = scanDir(fullPath, baseDir);
       results.push(...sub);
     } else if (entry.isFile() && entry.name.toLowerCase().endsWith('.txt')) {
@@ -185,7 +173,6 @@ const index = allFiles.map(({ fullPath, relPath, filename }) => {
   const meta  = parseMeta(filename);
   const stats = statSync(fullPath);
   const folder = getFolderName(relPath);
-<<<<<<< HEAD
   const base = filename.replace(/\.txt$/i, '');
   const pointKey = base.replace(/^(?:IM3|Indosat|Ooredoo|Telkomsel|XL(?:Axiata)?|Smartfren)_/i, '');
   const point = pointCoordinates.get(pointKey);
@@ -195,8 +182,6 @@ const index = allFiles.map(({ fullPath, relPath, filename }) => {
   if (point && !isReferenceOnly && !checkpointId) {
     throw new Error(`Titik ${pointKey} belum memiliki checkpoint. Periksa POINT_CHECKPOINT_MAP.`);
   }
-=======
->>>>>>> a75878d3452a1206f5e86765f81f8da857ddb2cb
 
   return {
     filename,
@@ -204,7 +189,6 @@ const index = allFiles.map(({ fullPath, relPath, filename }) => {
     path: `/dummy/${relPath}`,        // URL untuk fetch
     rel_path: relPath,                // path relatif dari dummy/
     provider:    meta.provider,
-<<<<<<< HEAD
     floor:       point ? point.floor : meta.floor,
     ruang:       meta.ruang,
     measurement: meta.measurement,
@@ -214,12 +198,6 @@ const index = allFiles.map(({ fullPath, relPath, filename }) => {
     latitude:    point ? point.latitude : undefined,
     longitude:   point ? point.longitude : undefined,
     reference_only: isReferenceOnly,
-=======
-    floor:       meta.floor,
-    ruang:       meta.ruang,
-    measurement: meta.measurement,
-    is_bts:      meta.isBTS,
->>>>>>> a75878d3452a1206f5e86765f81f8da857ddb2cb
     size_bytes:  stats.size,
   };
 });
@@ -267,3 +245,4 @@ console.log('   1. Buat subfolder di public/dummy/ (misal: sesi2/)');
 console.log('   2. Taruh file .txt di subfolder tersebut');
 console.log('   3. Jalankan: npm run index-dummy');
 console.log('   4. Reload browser → Muat Dummy Files');
+

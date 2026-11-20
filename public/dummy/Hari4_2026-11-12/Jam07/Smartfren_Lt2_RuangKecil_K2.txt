@@ -1499,3 +1499,4 @@ Timestamp	Longitude	Latitude	Operatorname	NetworkTech	Level	LTERSSI	Filemark
 2026.11.16_09.14.59	123.66800	-10.15396	Smartfren	4G	-99	-95	DUMMY
 2026.11.16_09.14.59	123.66800	-10.15396	Smartfren	4G	-98	-94	DUMMY
 2026.11.16_09.14.59	123.66800	-10.15396	Smartfren	4G	-97	-96	DUMMY
+

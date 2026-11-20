@@ -1499,3 +1499,4 @@ Timestamp	Longitude	Latitude	Operatorname	NetworkTech	Level	LTERSSI	Filemark
 2026.11.14_07.59.59	123.66799	-10.15411	Telkomsel	4G	-90	-89	DUMMY
 2026.11.14_07.59.59	123.66799	-10.15411	Telkomsel	4G	-89	-84	DUMMY
 2026.11.14_07.59.59	123.66799	-10.15411	Telkomsel	4G	-90	-85	DUMMY
+
