@@ -168,8 +168,11 @@ export const checkpoints = [
   // K2 untuk dua ruang kecil laboratorium pada denah lantai 2.
   { id: 'F2-CP23', x: 26, y: 0.5, floor: 2, zona: 'Indoor', label: 'Ruang Lab LT2 Kiri - K2' },
   { id: 'F2-CP24', x: 36, y: 0.5, floor: 2, zona: 'Indoor', label: 'Ruang Lab LT2 Kanan - K2' },
+<<<<<<< HEAD
 
   // Dua titik pengukuran tambahan untuk area Lab LT2, dekat titik lab yang ada.
   { id: 'F2-CP25', x: 28, y: 1.5, floor: 2, zona: 'Indoor', label: 'Lab LT2 - K1' },
   { id: 'F2-CP26', x: 32, y: 1.5, floor: 2, zona: 'Indoor', label: 'Lab LT2 - K2' },
+=======
+>>>>>>> a75878d3452a1206f5e86765f81f8da857ddb2cb
 ];

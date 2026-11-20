@@ -142,14 +142,24 @@ async function processEntry(entry) {
     const medRssi = rssiValues.length ? median(rssiValues) : null;
 
     // Checkpoint
+<<<<<<< HEAD
     const cpId = entry.checkpoint_id || (entry.reference_only ? null : getCheckpointId(
+=======
+    const cpId = getCheckpointId(
+>>>>>>> a75878d3452a1206f5e86765f81f8da857ddb2cb
       entry.floor,
       entry.ruang,
       entry.is_bts,
       entry.measurement,
+<<<<<<< HEAD
     ));
     const cp = cpId ? checkpoints.find((c) => c.id === cpId) : null;
     if (!cp && !entry.reference_only) return null;
+=======
+    );
+    const cp = checkpoints.find((c) => c.id === cpId);
+    if (!cp) return null;
+>>>>>>> a75878d3452a1206f5e86765f81f8da857ddb2cb
 
     // Koordinat GPS dari file (median), fallback ke checkpoint
     const lats = rows.map((r) => r.latitude).filter((v) => !Number.isNaN(v) && v !== 0);
@@ -161,6 +171,7 @@ async function processEntry(entry) {
     return {
       source:        'walk_test_dummy',
       filename:      entry.filename,
+<<<<<<< HEAD
       dataset_path:  entry.rel_path || entry.path,
       point_id:      entry.point_id || null,
       checkpoint_id: cp?.id || null,
@@ -168,6 +179,12 @@ async function processEntry(entry) {
       provider,
       floor:         entry.floor ?? cp?.floor ?? null,
       zona:          cp?.zona || (entry.reference_only ? 'Outdoor' : null),
+=======
+      checkpoint_id: cp.id,
+      provider,
+      floor:         entry.floor || cp.floor,
+      zona:          cp.zona,
+>>>>>>> a75878d3452a1206f5e86765f81f8da857ddb2cb
       latitude:      lats.length ? median(lats) : null,
       longitude:     lons.length ? median(lons) : null,
       rsrp:          Math.round(medRsrp * 10) / 10,
@@ -214,7 +231,11 @@ export async function loadDummyIndex() {
  * @param {Function} [options.onProgress]         — callback(loaded, total, filename)
  * @returns {Promise<Array>} walk test records yang valid
  */
+<<<<<<< HEAD
 export async function loadAllDummyFiles({ includeAll = false, providers = null, includeReference = false, onProgress } = {}) {
+=======
+export async function loadAllDummyFiles({ includeAll = false, providers = null, onProgress } = {}) {
+>>>>>>> a75878d3452a1206f5e86765f81f8da857ddb2cb
   const KNOWN = ['Telkomsel', 'XL Axiata', 'Indosat Ooredoo'];
 
   let entries;
@@ -232,6 +253,7 @@ export async function loadAllDummyFiles({ includeAll = false, providers = null, 
     entries = entries.filter((e) => KNOWN.includes(normalizeProvider(e.provider)));
   }
 
+<<<<<<< HEAD
   if (!includeReference) {
     entries = entries.filter((e) => !e.reference_only);
   }
@@ -246,6 +268,14 @@ export async function loadAllDummyFiles({ includeAll = false, providers = null, 
       return processEntry(entry);
     }));
     results.push(...loaded.filter(Boolean));
+=======
+  const results = [];
+  for (let i = 0; i < entries.length; i++) {
+    const entry = entries[i];
+    if (onProgress) onProgress(i + 1, entries.length, entry.filename);
+    const rec = await processEntry(entry);
+    if (rec) results.push(rec);
+>>>>>>> a75878d3452a1206f5e86765f81f8da857ddb2cb
   }
 
   return results;
