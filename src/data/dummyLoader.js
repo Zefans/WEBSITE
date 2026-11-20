@@ -142,14 +142,14 @@ async function processEntry(entry) {
     const medRssi = rssiValues.length ? median(rssiValues) : null;
 
     // Checkpoint
-    const cpId = getCheckpointId(
+    const cpId = entry.checkpoint_id || (entry.reference_only ? null : getCheckpointId(
       entry.floor,
       entry.ruang,
       entry.is_bts,
       entry.measurement,
-    );
-    const cp = checkpoints.find((c) => c.id === cpId);
-    if (!cp) return null;
+    ));
+    const cp = cpId ? checkpoints.find((c) => c.id === cpId) : null;
+    if (!cp && !entry.reference_only) return null;
 
     // Koordinat GPS dari file (median), fallback ke checkpoint
     const lats = rows.map((r) => r.latitude).filter((v) => !Number.isNaN(v) && v !== 0);
@@ -161,10 +161,13 @@ async function processEntry(entry) {
     return {
       source:        'walk_test_dummy',
       filename:      entry.filename,
-      checkpoint_id: cp.id,
+      dataset_path:  entry.rel_path || entry.path,
+      point_id:      entry.point_id || null,
+      checkpoint_id: cp?.id || null,
+      reference_only: Boolean(entry.reference_only),
       provider,
-      floor:         entry.floor || cp.floor,
-      zona:          cp.zona,
+      floor:         entry.floor ?? cp?.floor ?? null,
+      zona:          cp?.zona || (entry.reference_only ? 'Outdoor' : null),
       latitude:      lats.length ? median(lats) : null,
       longitude:     lons.length ? median(lons) : null,
       rsrp:          Math.round(medRsrp * 10) / 10,
@@ -211,7 +214,7 @@ export async function loadDummyIndex() {
  * @param {Function} [options.onProgress]         — callback(loaded, total, filename)
  * @returns {Promise<Array>} walk test records yang valid
  */
-export async function loadAllDummyFiles({ includeAll = false, providers = null, onProgress } = {}) {
+export async function loadAllDummyFiles({ includeAll = false, providers = null, includeReference = false, onProgress } = {}) {
   const KNOWN = ['Telkomsel', 'XL Axiata', 'Indosat Ooredoo'];
 
   let entries;
@@ -229,12 +232,20 @@ export async function loadAllDummyFiles({ includeAll = false, providers = null, 
     entries = entries.filter((e) => KNOWN.includes(normalizeProvider(e.provider)));
   }
 
+  if (!includeReference) {
+    entries = entries.filter((e) => !e.reference_only);
+  }
+
   const results = [];
-  for (let i = 0; i < entries.length; i++) {
-    const entry = entries[i];
-    if (onProgress) onProgress(i + 1, entries.length, entry.filename);
-    const rec = await processEntry(entry);
-    if (rec) results.push(rec);
+  const batchSize = 12;
+  for (let start = 0; start < entries.length; start += batchSize) {
+    const batch = entries.slice(start, start + batchSize);
+    const loaded = await Promise.all(batch.map(async (entry, offset) => {
+      const index = start + offset;
+      if (onProgress) onProgress(index + 1, entries.length, entry.filename);
+      return processEntry(entry);
+    }));
+    results.push(...loaded.filter(Boolean));
   }
 
   return results;

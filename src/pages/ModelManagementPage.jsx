@@ -92,23 +92,25 @@ export default function ModelManagementPage() {
 
     try {
       const records = await loadAllDummyFiles({
-        includeAll: false, // hanya Telkomsel, XL Axiata, Indosat Ooredoo
+        includeAll: true, // sertakan semua provider di data baru, termasuk Smartfren
         onProgress: (loaded, total, filename) => {
           setDummyProgress({ loaded, total, current: filename });
         },
       });
 
       setDummyLoaded(records);
-      // Gabungkan dengan signalData yang sudah ada (deduplicate by checkpoint+provider)
+      // Pertahankan setiap sesi/hari; hanya cegah file yang sama terduplikasi.
       const combined = [...signalData];
+      const loadedPaths = new Set(
+        combined.map((record) => record.dataset_path).filter(Boolean)
+      );
       for (const rec of records) {
-        const exists = combined.some(
-          (d) => d.checkpoint_id === rec.checkpoint_id && d.provider === rec.provider
-        );
-        if (!exists) combined.push(rec);
+        if (rec.dataset_path && loadedPaths.has(rec.dataset_path)) continue;
+        combined.push(rec);
+        if (rec.dataset_path) loadedPaths.add(rec.dataset_path);
       }
       setExtraWalkTest(combined);
-      setStatusMsg(`✅ ${records.length} record walk test dimuat dari ${dummyIndex?.count || '?'} file dummy. Siap untuk training.`);
+      setStatusMsg(`✅ ${records.length} record walk test dimuat dari indeks berisi ${dummyIndex?.count || '?'} file. Data BTS tetap sebagai referensi. Siap untuk training.`);
     } catch (err) {
       setStatusMsg(`❌ Gagal memuat dummy files: ${err.message}`);
     } finally {

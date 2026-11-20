@@ -14,13 +14,72 @@
 // Setiap kali menambah file/folder baru, jalankan script ini lagi.
 // ============================================================================
 
-import { readdirSync, writeFileSync, statSync } from 'fs';
-import { join, resolve, dirname, relative, posix } from 'path';
+import { readdirSync, readFileSync, writeFileSync, statSync } from 'fs';
+import { join, resolve, dirname, relative } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DUMMY_DIR = resolve(__dirname, '../public/dummy');
 const OUTPUT    = resolve(__dirname, '../public/dummy/index.json');
+const POINTS_CSV = resolve(DUMMY_DIR, 'daftar_titik_DUMMY.csv');
+
+const POINT_CHECKPOINT_MAP = {
+  Lt1_KelasKanan1_K1: 'F1-CP03',
+  Lt1_KelasKanan1_K2: 'F1-CP04',
+  Lt1_KelasKanan2_K1: 'F1-CP05',
+  Lt1_KelasKanan2_K2: 'F1-CP21',
+  Lt1_KelasKiri_K1: 'F1-CP06',
+  Lt1_KelasKiri_K2: 'F1-CP07',
+  Lt1_RL1_K1: 'F1-CP16',
+  Lt1_RL1_K2: 'F1-CP23',
+  Lt1_RL2_K1: 'F1-CP15',
+  Lt1_RL2_K2: 'F1-CP22',
+  Lt1_RL3_K1: 'F1-CP17',
+  Lt1_RL3_K2: 'F1-CP24',
+  Lt1_RL4_K1: 'F1-CP18',
+  Lt1_RL4_K2: 'F1-CP25',
+  Lt1_SeminarKiri_K1: 'F1-CP01',
+  Lt1_SeminarKiri_K2: 'F1-CP02',
+  Lt2_KelasKanan_K1: 'F2-CP03',
+  Lt2_KelasKanan_K2: 'F2-CP04',
+  Lt2_LabLT2_K1: 'F2-CP25',
+  Lt2_LabLT2_K2: 'F2-CP26',
+  Lt2_RuangDosen_K1: 'F2-CP14',
+  Lt2_RuangDosen_K2: 'F2-CP22',
+  Lt2_RuangHME_K1: 'F2-CP01',
+  Lt2_RuangHME_K2: 'F2-CP02',
+  Lt2_RuangKecil_K1: 'F2-CP15',
+  Lt2_RuangKecil_K2: 'F2-CP16',
+  Lt2_RuangLabLT2_K1: 'F2-CP17',
+  Lt2_RuangLabLT2_K2: 'F2-CP23',
+  Lt2_RuangLabLantai2_K1: 'F2-CP18',
+  Lt2_RuangLabLantai2_K2: 'F2-CP24',
+  Lt2_RuangOperator_K1: 'F2-CP06',
+  Lt2_RuangOperator_K2: 'F2-CP07',
+  Lt2_SeminarKanan_K1: 'F2-CP05',
+  Lt2_SeminarKanan_K2: 'F2-CP21',
+};
+
+function parsePointCsv(csvText) {
+  const [headerLine, ...lines] = csvText.trim().split(/\r?\n/);
+  const headers = headerLine.split(',').map((value) => value.trim());
+  const points = new Map();
+
+  for (const line of lines) {
+    if (!line.trim()) continue;
+    const values = line.split(',').map((value) => value.trim());
+    const row = Object.fromEntries(headers.map((key, index) => [key, values[index]]));
+    points.set(row.titik, {
+      floor: Number(row.lantai),
+      latitude: Number(row.latitude),
+      longitude: Number(row.longitude),
+    });
+  }
+
+  return points;
+}
+
+const pointCoordinates = parsePointCsv(readFileSync(POINTS_CSV, 'utf8'));
 
 // ---------------------------------------------------------------------------
 // Scan rekursif: kumpulkan semua .txt dari DUMMY_DIR dan semua subfoldernya
@@ -33,7 +92,7 @@ function scanDir(dir, baseDir) {
     const fullPath = join(dir, entry.name);
 
     if (entry.isDirectory()) {
-      // Masuk ke subfolder (rekursif, 1 level saja — tidak masuk nested lebih dalam)
+      // Folder data bisa berlapis, misalnya Hari/Jam.
       const sub = scanDir(fullPath, baseDir);
       results.push(...sub);
     } else if (entry.isFile() && entry.name.toLowerCase().endsWith('.txt')) {
@@ -114,6 +173,15 @@ const index = allFiles.map(({ fullPath, relPath, filename }) => {
   const meta  = parseMeta(filename);
   const stats = statSync(fullPath);
   const folder = getFolderName(relPath);
+  const base = filename.replace(/\.txt$/i, '');
+  const pointKey = base.replace(/^(?:IM3|Indosat|Ooredoo|Telkomsel|XL(?:Axiata)?|Smartfren)_/i, '');
+  const point = pointCoordinates.get(pointKey);
+  const isReferenceOnly = pointKey === 'BTS_10m';
+  const checkpointId = POINT_CHECKPOINT_MAP[pointKey];
+
+  if (point && !isReferenceOnly && !checkpointId) {
+    throw new Error(`Titik ${pointKey} belum memiliki checkpoint. Periksa POINT_CHECKPOINT_MAP.`);
+  }
 
   return {
     filename,
@@ -121,10 +189,15 @@ const index = allFiles.map(({ fullPath, relPath, filename }) => {
     path: `/dummy/${relPath}`,        // URL untuk fetch
     rel_path: relPath,                // path relatif dari dummy/
     provider:    meta.provider,
-    floor:       meta.floor,
+    floor:       point ? point.floor : meta.floor,
     ruang:       meta.ruang,
     measurement: meta.measurement,
-    is_bts:      meta.isBTS,
+    is_bts:      meta.isBTS || isReferenceOnly,
+    point_id:    point ? pointKey : undefined,
+    checkpoint_id: checkpointId,
+    latitude:    point ? point.latitude : undefined,
+    longitude:   point ? point.longitude : undefined,
+    reference_only: isReferenceOnly,
     size_bytes:  stats.size,
   };
 });
